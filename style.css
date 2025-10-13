@@ -1,0 +1,45 @@
+body {
+  font-family: "Hiragino Kaku Gothic ProN", "メイリオ", sans-serif;
+  background-color: #fafafa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+#app {
+  text-align: center;
+  padding: 20px;
+  width: 90%;
+  max-width: 600px;
+}
+
+h1 {
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  margin-bottom: 30px;
+}
+
+#quiz-area p {
+  font-size: clamp(1rem, 3vw, 1.8rem);
+  margin: 10px 0;
+}
+
+button {
+  font-size: clamp(1rem, 3vw, 1.4rem);
+  padding: 10px 20px;
+  margin-top: 20px;
+  border: none;
+  border-radius: 10px;
+  background-color: #ffcc00;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: #ffdd44;
+}
+
+.hidden {
+  display: none;
+}
