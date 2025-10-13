@@ -42,9 +42,11 @@ function showQuestion() {
 
   timer = setInterval(() => {
     countdown--;
-    countdownElem.textContent = countdown;
-    if (countdown === 0) {
+    if (countdown > 0) {
+      countdownElem.textContent = countdown;
+    } else {
       clearInterval(timer);
+      countdownElem.textContent = ""; // 「0」を消す
       showAnswer();
     }
   }, 1000);
