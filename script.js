@@ -16,9 +16,9 @@ fetch("questions.json")
   });
 
 // スタートボタン
-startBtn.addEventListener("click", () => {
-  startBtn.classList.add("hidden");
-  nextBtn.classList.add("hidden");
+start-btn.addEventListener("click", () => {
+  start-btn.classList.add("hidden");
+  next-btn.classList.add("hidden");
   showQuestion();
 });
 
@@ -55,13 +55,13 @@ function showAnswer(q) {
   nextBtn.classList.remove("hidden");
 }
 
-nextBtn.addEventListener("click", () => {
-  nextBtn.classList.add("hidden");
+next-btn.addEventListener("click", () => {
+  next-btn.classList.add("hidden");
   showQuestion();
 });
 
-nextBtn.addEventListener("click", () => {
+next-btn.addEventListener("click", () => {
   currentIndex++;
-  nextBtn.classList.add("hidden");
+  next-btn.classList.add("hidden");
   showQuestion();
 });
