@@ -15,16 +15,35 @@ body {
   max-width: 600px;
 }
 
+/* タイトル */
 h1 {
   font-size: clamp(1.5rem, 4vw, 2.5rem);
   margin-bottom: 30px;
 }
 
-#quiz-area p {
-  font-size: clamp(1rem, 3vw, 1.8rem);
-  margin: 10px 0;
+/* 問題文：一番目立つ */
+#question {
+  font-size: clamp(1.4rem, 4vw, 2.2rem);
+  font-weight: bold;
+  margin: 20px 0;
 }
 
+/* カウントダウン：やや大きく、強調 */
+#countdown {
+  font-size: clamp(2rem, 6vw, 3rem);
+  font-weight: bold;
+  color: #d9534f;
+  margin: 15px 0;
+}
+
+/* 正答表示：やや小さめ、落ち着いた色 */
+#answer {
+  font-size: clamp(1.2rem, 3.5vw, 1.8rem);
+  color: #333;
+  margin: 20px 0;
+}
+
+/* ボタン */
 button {
   font-size: clamp(1rem, 3vw, 1.4rem);
   padding: 10px 20px;
