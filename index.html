@@ -5,15 +5,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>フラッシュラッシュ</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    /* タイトルを少し小さめに調整し、説明文の見た目を追加 */
+    h1 {
+      font-size: clamp(1.8rem, 4vw, 2.4rem);
+      margin-bottom: 0.3em;
+    }
+
+    .subtitle {
+      font-size: clamp(0.9rem, 2.5vw, 1.2rem);
+      color: #666;
+      margin-bottom: 1.5em;
+    }
+  </style>
 </head>
 <body>
   <div id="app">
     <h1>フラッシュラッシュ</h1>
-    <div id="quiz-area">
-      <p id="question">スタートボタンを押して開始！</p>
-      <p id="countdown"></p>
-      <p id="answer" class="hidden"></p>
-    </div>
+    <p class="subtitle">5秒以内に答えよう！</p>
+
+    <div id="question">問題がここに表示されます</div>
+    <div id="countdown"></div>
+    <div id="answer"></div>
+
     <button id="start-btn">スタート</button>
     <button id="next-btn" class="hidden">次へ</button>
   </div>
