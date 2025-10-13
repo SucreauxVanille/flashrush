@@ -1,5 +1,4 @@
 let questions = [];
-let currentIndex = 0;
 let countdown = 5;
 let timer;
 
@@ -20,26 +19,24 @@ fetch("questions.json")
 startBtn.addEventListener("click", () => {
   startBtn.classList.add("hidden");
   nextBtn.classList.add("hidden");
-  currentIndex = 0;
   showQuestion();
 });
 
 function showQuestion() {
-  if (currentIndex >= questions.length) {
-    questionElem.textContent = "全問終了！";
-    countdownElem.textContent = "";
-    answerElem.textContent = "";
-    startBtn.classList.remove("hidden");
-    startBtn.textContent = "もう一度";
-    return;
-  }
+  if (questions.length === 0) return;
 
-  const q = questions[currentIndex];
+  // ランダムな問題を選択
+  const randomIndex = Math.floor(Math.random() * questions.length);
+  const q = questions[randomIndex];
+
+  // 表示リセット
   questionElem.textContent = q.question;
   answerElem.classList.add("hidden");
   countdown = 5;
   countdownElem.textContent = countdown;
 
+  // カウントダウン開始
+  clearInterval(timer);
   timer = setInterval(() => {
     countdown--;
     if (countdown > 0) {
@@ -47,17 +44,21 @@ function showQuestion() {
     } else {
       clearInterval(timer);
       countdownElem.textContent = ""; // 「0」を消す
-      showAnswer();
+      showAnswer(q);
     }
   }, 1000);
 }
 
-function showAnswer() {
-  const q = questions[currentIndex];
+function showAnswer(q) {
   answerElem.textContent = "答え：" + q.answer;
   answerElem.classList.remove("hidden");
   nextBtn.classList.remove("hidden");
 }
+
+nextBtn.addEventListener("click", () => {
+  nextBtn.classList.add("hidden");
+  showQuestion();
+});
 
 nextBtn.addEventListener("click", () => {
   currentIndex++;
