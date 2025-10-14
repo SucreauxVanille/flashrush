@@ -1,36 +1,100 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>フラッシュラッシュ</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ロジカルバナナ</title>
   <style>
-    /* タイトルを少し小さめに調整し、説明文の見た目を追加 */
-    h1 {
-      font-size: clamp(1.8rem, 4vw, 2.4rem);
-      margin-bottom: 0.3em;
+    body {
+      font-family: "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+      text-align: center;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
     }
 
-    .subtitle {
-      font-size: clamp(0.9rem, 2.5vw, 1.2rem);
+    h1 {
+      font-size: 2rem;
+      margin-top: 1rem;
+      color: #333;
+    }
+
+    p.description {
+      font-size: 0.9rem;
       color: #666;
-      margin-bottom: 1.5em;
+      margin-bottom: 1.5rem;
+    }
+
+    .card {
+      background-color: #fff;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      width: 90%;
+      max-width: 400px;
+      margin: 0 auto 1.5rem;
+      padding: 1.5rem;
+    }
+
+    #question {
+      font-size: 1.8rem;
+      font-weight: bold;
+      margin: 0.5rem 0;
+      color: #222;
+    }
+
+    #countdown {
+      font-size: 1.4rem;
+      color: #ff6600;
+      margin: 0.5rem 0;
+    }
+
+    #answer {
+      font-size: 1.4rem;
+      color: #007700;
+      margin-top: 0.5rem;
+    }
+
+    button {
+      font-size: 1rem;
+      padding: 0.6rem 1.2rem;
+      margin: 0.5rem;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      background-color: #0078D7;
+      color: white;
+      transition: background-color 0.2s;
+    }
+
+    button:hover {
+      background-color: #005FA3;
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.6rem;
+      }
+      #question {
+        font-size: 1.5rem;
+      }
+      #countdown {
+        font-size: 1.2rem;
+      }
     }
   </style>
 </head>
 <body>
-  <div id="app">
-    <h1>フラッシュラッシュ</h1>
-    <p class="subtitle">5秒以内に答えよう！</p>
+  <h1>ロジカルバナナ</h1>
+  <p class="description">5秒以内に答えよう！</p>
 
-    <div id="question">問題がここに表示されます</div>
+  <div class="card">
+    <div id="question">ここに問題が表示されます</div>
     <div id="countdown"></div>
     <div id="answer"></div>
-
-    <button id="start-btn">スタート</button>
-    <button id="next-btn" class="hidden">次へ</button>
   </div>
+
+  <button id="start-btn">スタート</button>
+  <button id="next-btn" style="display:none;">つぎへ</button>
 
   <script src="script.js"></script>
 </body>
