@@ -62,7 +62,10 @@ function showQuestion() {
   answerElem.classList.add("hidden");
   nextBtn.classList.add("hidden");
 
-  // カウントダウン初期化（ここで5秒を設定、必要なら可変に変更可能）
+  // ボタン切り替え：開始中は start を非表示
+  startBtn.classList.add("hidden");
+
+  // カウントダウン初期化
   countdown = 5;
   countdownElem.textContent = countdown;
 
@@ -90,6 +93,9 @@ function showQuestion() {
 function showAnswer(q) {
   answerElem.textContent = "答え： " + (q.answer || "（答えが設定されていません）");
   answerElem.classList.remove("hidden");
+
+  // 「スタート」→「次へ」切り替え
+  startBtn.classList.add("hidden");
   nextBtn.classList.remove("hidden");
 }
 
@@ -107,3 +113,4 @@ nextBtn.addEventListener("click", () => {
   // すぐ次の問題へ（ランダム∞モード）
   showQuestion();
 });
+
